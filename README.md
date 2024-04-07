@@ -2,8 +2,9 @@
 
 1. Start and ensure that your Docker Desktop is running.
 2. Update your `.env` file using the `.env.example` template.
-3. Run `docker-compose build`.
+3. Run `docker-compose up -d`.
 4. Run `npm install`.
+5. Run `npx prisma migrate dev --name init`
 
 ## Running the app
 
