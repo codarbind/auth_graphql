@@ -1,0 +1,49 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Auth {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type AuthResponse {
+  token: String!
+  user: User!
+}
+
+type CaptureBioResponse {
+  success: Boolean!
+}
+
+input LocalSigninInput {
+  """Email address"""
+  email: String!
+
+  """plain password from user"""
+  password: String!
+}
+
+type Mutation {
+  biometricLogin(biometricCapture: String!): AuthResponse!
+  captureBiometric(biometricCapture: String!): CaptureBioResponse!
+  signin(localsigninInput: LocalSigninInput!): AuthResponse!
+  signup(signupInput: SignupInput!): AuthResponse!
+}
+
+type Query {
+  auth: [Auth!]!
+}
+
+input SignupInput {
+  """Email address"""
+  email: String!
+
+  """plain password from user"""
+  password: String!
+}
+
+type User {
+  email: String!
+  id: ID!
+}
